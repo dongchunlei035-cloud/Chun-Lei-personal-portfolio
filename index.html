@@ -3,21 +3,33 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>个人作品集 | 视觉设计 / AI 商业摄影 / 品牌视觉</title>
+    <title>CHUN LEI Studio | AI 商业摄影与品牌视觉</title>
     <meta
       name="description"
-      content="视觉设计、AI 商业摄影与品牌视觉创作者的个人作品集网站。"
+      content="CHUN LEI Studio：视觉设计、AI 商业摄影与品牌视觉创作者的个人作品集网站。"
     />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <header class="site-header">
       <div class="container nav-wrap">
-        <a href="#home" class="brand">Portfolio</a>
-        <button class="menu-toggle" id="menuToggle" aria-label="切换菜单">☰</button>
-        <nav class="nav" id="siteNav">
+        <a href="#home" class="brand" aria-label="CHUN LEI Studio 首页">
+          <span>CHUN LEI</span>
+          <span>Studio</span>
+        </a>
+        <button
+          class="menu-toggle"
+          id="menuToggle"
+          type="button"
+          aria-label="切换菜单"
+          aria-expanded="false"
+          aria-controls="siteNav"
+        >
+          Menu
+        </button>
+        <nav class="nav" id="siteNav" aria-label="主导航">
           <a href="#home">首页</a>
-          <a href="#about">关于我</a>
+          <a href="#about">关于</a>
           <a href="#works">作品</a>
           <a href="#services">服务</a>
           <a href="#contact">联系</a>
@@ -27,73 +39,127 @@
 
     <main>
       <section id="home" class="hero section">
-        <div class="container hero-content">
-          <p class="tag">视觉设计 / AI 商业摄影 / 品牌视觉创作者</p>
-          <h1>用视觉语言，打造品牌的质感与记忆点</h1>
-          <p class="hero-desc">
-            我专注于商业视觉与品牌表达，从创意方向到最终画面落地，让品牌在第一眼就被记住。
-          </p>
-          <a href="#works" class="btn">查看作品</a>
+        <div class="container hero-layout">
+          <div class="hero-copy">
+            <p class="eyebrow">Visual Direction · AI Commercial Photography</p>
+            <h1>CHUN LEI Studio 为品牌创造克制、清晰且高级的商业视觉。</h1>
+            <p class="hero-desc">
+              从 AI 商业摄影、产品主视觉到品牌包装表达，以黑白灰的秩序、奶油白的温度，建立可被记住的视觉资产。
+            </p>
+            <div class="hero-actions">
+              <a href="#works" class="btn btn-dark">查看作品</a>
+              <a href="#contact" class="btn btn-light">预约合作</a>
+            </div>
+          </div>
+          <div class="hero-panel" aria-label="CHUN LEI Studio 视觉关键词">
+            <span class="panel-index">01</span>
+            <p>Commercial Image System</p>
+            <strong>Quiet luxury visuals for products, brands and campaigns.</strong>
+          </div>
         </div>
       </section>
 
       <section id="about" class="section about">
-        <div class="container">
-          <h2>关于我</h2>
-          <p>
-            你好，我是一名视觉设计 / AI 商业摄影 / 品牌视觉创作者。
-            我长期专注视觉设计、AI商业摄影、品牌包装与提示词设计，擅长将品牌气质转化为清晰、有辨识度、可执行的视觉方案。
-          </p>
+        <div class="container split-section">
+          <p class="section-kicker">About the studio</p>
+          <div>
+            <h2>以视觉设计师的判断力，结合 AI 商业摄影的效率。</h2>
+            <p>
+              你好，我是 CHUN LEI，一名视觉设计 / AI 商业摄影 / 品牌视觉创作者。长期专注商业产品图、品牌包装视觉与提示词设计，擅长将品牌气质转化为清晰、有辨识度、可执行的画面系统。
+            </p>
+          </div>
         </div>
       </section>
 
       <section id="works" class="section works">
         <div class="container">
-          <h2>作品展示</h2>
+          <div class="section-head">
+            <p class="section-kicker">Selected work</p>
+            <h2>作品展示</h2>
+            <p>
+              以案例页的方式呈现项目气质：画面、策略、材质与品牌记忆点共同构成高级商业影像。
+            </p>
+          </div>
           <div class="work-grid">
-            <article class="work-card">
-              <img src="https://via.placeholder.com/800x600?text=Work+01" alt="作品 1" />
-              <h3>商业产品视觉 01</h3>
+            <article class="work-card featured">
+              <div class="work-visual visual-cream">
+                <span>01</span>
+              </div>
+              <div class="work-info">
+                <p>AI Commercial Photography</p>
+                <h3>高端护肤产品视觉</h3>
+                <span>质感布光 / 奶油白场景 / 电商主图</span>
+              </div>
             </article>
             <article class="work-card">
-              <img src="https://via.placeholder.com/800x600?text=Work+02" alt="作品 2" />
-              <h3>商业产品视觉 02</h3>
+              <div class="work-visual visual-black">
+                <span>02</span>
+              </div>
+              <div class="work-info">
+                <p>Brand Key Visual</p>
+                <h3>黑白品牌主视觉</h3>
+                <span>极简构图 / 品牌调性 / Campaign KV</span>
+              </div>
             </article>
             <article class="work-card">
-              <img src="https://via.placeholder.com/800x600?text=Work+03" alt="作品 3" />
-              <h3>品牌主视觉 03</h3>
+              <div class="work-visual visual-gray">
+                <span>03</span>
+              </div>
+              <div class="work-info">
+                <p>Packaging Direction</p>
+                <h3>精品包装视觉系统</h3>
+                <span>包装延展 / 材质氛围 / 货架识别</span>
+              </div>
             </article>
             <article class="work-card">
-              <img src="https://via.placeholder.com/800x600?text=Work+04" alt="作品 4" />
-              <h3>品牌包装 04</h3>
-            </article>
-            <article class="work-card">
-              <img src="https://via.placeholder.com/800x600?text=Work+05" alt="作品 5" />
-              <h3>AI 商业摄影 05</h3>
-            </article>
-            <article class="work-card">
-              <img src="https://via.placeholder.com/800x600?text=Work+06" alt="作品 6" />
-              <h3>海报设计 06</h3>
+              <div class="work-visual visual-line">
+                <span>04</span>
+              </div>
+              <div class="work-info">
+                <p>Poster Design</p>
+                <h3>商业海报与社媒物料</h3>
+                <span>版式层级 / 留白节奏 / 发布模板</span>
+              </div>
             </article>
           </div>
         </div>
       </section>
 
       <section id="services" class="section services">
-        <div class="container">
-          <h2>服务内容</h2>
-          <div class="service-list">
-            <div class="service-item">商业产品图</div>
-            <div class="service-item">AI 视觉提示词</div>
-            <div class="service-item">品牌包装视觉</div>
-            <div class="service-item">海报设计</div>
+        <div class="container split-section">
+          <p class="section-kicker">Services</p>
+          <div>
+            <h2>轻量但完整的视觉服务，适合品牌快速升级第一版质感。</h2>
+            <div class="service-list">
+              <div class="service-item">
+                <span>01</span>
+                <strong>商业产品图</strong>
+                <p>用于电商、社媒与广告投放的高质感产品影像。</p>
+              </div>
+              <div class="service-item">
+                <span>02</span>
+                <strong>AI 视觉提示词</strong>
+                <p>建立可复用的画面风格、灯光、材质与构图语言。</p>
+              </div>
+              <div class="service-item">
+                <span>03</span>
+                <strong>品牌包装视觉</strong>
+                <p>围绕产品定位输出包装方向、视觉氛围与延展规范。</p>
+              </div>
+              <div class="service-item">
+                <span>04</span>
+                <strong>海报设计</strong>
+                <p>为新品发布、活动传播与内容运营设计关键物料。</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
       <section id="contact" class="section contact">
-        <div class="container">
-          <h2>联系我</h2>
+        <div class="container contact-card">
+          <p class="section-kicker">Contact</p>
+          <h2>如果你的品牌需要更高级的第一眼，我们可以从一组核心画面开始。</h2>
           <ul>
             <li>邮箱：yourname@email.com</li>
             <li>微信：your_wechat_id</li>
@@ -104,8 +170,9 @@
     </main>
 
     <footer class="site-footer">
-      <div class="container">
-        <p>© 2026 Your Name. All rights reserved.</p>
+      <div class="container footer-wrap">
+        <p>© 2026 CHUN LEI Studio. All rights reserved.</p>
+        <a href="#home">Back to top</a>
       </div>
     </footer>
 
