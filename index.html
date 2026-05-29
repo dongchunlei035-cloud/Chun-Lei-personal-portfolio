@@ -13,9 +13,11 @@
   <body>
     <header class="site-header" id="top">
       <div class="container nav-wrap">
-        <a href="#home" class="brand">CHUN LEI STUDIO</a>
-        <button class="menu-toggle" id="menuToggle" aria-label="切换菜单" aria-expanded="false" aria-controls="siteNav">Menu</button>
-        <nav class="nav" id="siteNav">
+        <a href="#home" class="brand" aria-label="返回首页">CHUN LEI STUDIO</a>
+        <button class="menu-toggle" id="menuToggle" aria-label="切换菜单" aria-expanded="false" aria-controls="siteNav">
+          Menu
+        </button>
+        <nav class="nav" id="siteNav" aria-label="主导航">
           <a href="#home">首页</a>
           <a href="#about">关于我</a>
           <a href="#works">作品</a>
@@ -27,68 +29,85 @@
 
     <main>
       <section id="home" class="hero section">
-        <div class="container hero-content">
-          <p class="eyebrow">VISUAL DESIGN · AI COMMERCIAL PHOTOGRAPHY · BRAND IMAGE</p>
-          <h1>让品牌在第一眼，就拥有高级质感</h1>
-          <p class="hero-desc">
-            我专注视觉设计、AI 商业摄影与品牌视觉系统，
-            用克制而有冲击力的画面，为品牌建立更强的商业辨识度。
-          </p>
-          <a href="#works" class="btn">查看精选作品</a>
+        <div class="container hero-layout">
+          <div class="hero-copy">
+            <p class="eyebrow">VISUAL DESIGN · AI COMMERCIAL PHOTOGRAPHY · BRAND IMAGE</p>
+            <h1>让品牌在第一眼，就拥有高级质感</h1>
+            <p class="hero-desc">
+              我专注视觉设计、AI 商业摄影与品牌视觉系统，用克制而有冲击力的画面，
+              为产品与品牌建立更强的商业辨识度。
+            </p>
+            <div class="hero-actions">
+              <a href="#works" class="btn btn-dark">查看精选作品</a>
+              <a href="#contact" class="btn btn-light">预约合作</a>
+            </div>
+          </div>
+
+          <div class="hero-visual" aria-label="AI 商业摄影主视觉占位图">
+            <img src="https://via.placeholder.com/900x1120?text=CHUN+LEI+STUDIO" alt="CHUN LEI Studio 作品主视觉" />
+            <div class="hero-caption">
+              <span>AI Product Visual</span>
+              <strong>Brand Campaign 2026</strong>
+            </div>
+          </div>
         </div>
       </section>
 
       <section id="about" class="section about">
-        <div class="container narrow">
-          <h2>关于我</h2>
-          <p>
-            我是视觉设计 / AI 商业摄影 / 品牌视觉创作者，服务方向覆盖消费品、生活方式与新消费品牌。
-            主要提供视觉设计、AI 商业摄影、品牌包装视觉与提示词设计，
-            帮助品牌把策略语言转化为可执行的高质感视觉表达。
-          </p>
+        <div class="container split-section">
+          <p class="section-label">ABOUT</p>
+          <div class="section-copy">
+            <h2>关于我</h2>
+            <p>
+              我是视觉设计 / AI 商业摄影 / 品牌视觉创作者，服务方向覆盖消费品、生活方式与新消费品牌。
+              主要提供视觉设计、AI 商业摄影、品牌包装视觉与提示词设计，
+              帮助品牌把策略语言转化为可执行的高质感视觉表达。
+            </p>
+          </div>
         </div>
       </section>
 
       <section id="works" class="section works">
         <div class="container">
           <div class="section-head">
+            <p class="section-label">SELECTED WORKS</p>
             <h2>作品展示</h2>
-            <p>以大图叙事为主，突出品牌官网级视觉感受。</p>
+            <p>以大图叙事为主，突出 AI 商业摄影、品牌包装与产品主视觉的官网级视觉感受。</p>
           </div>
 
           <div class="work-showcase">
-            <article class="work-card work-large">
-              <img src="https://via.placeholder.com/1800x1100?text=Work+01" alt="AI 商业摄影作品 01" />
+            <article class="work-card work-featured">
+              <img src="https://via.placeholder.com/1800x1100?text=AI+Commercial+Photography" alt="AI 商业摄影作品 01" />
               <div class="work-info">
-                <h3>AI 商业摄影 · 产品主视觉</h3>
                 <span>Campaign Visual</span>
+                <h3>AI 商业摄影 · 产品主视觉</h3>
               </div>
             </article>
 
-            <article class="work-card work-large">
-              <img src="https://via.placeholder.com/1800x1100?text=Work+02" alt="品牌包装视觉作品 02" />
+            <article class="work-card work-featured">
+              <img src="https://via.placeholder.com/1800x1100?text=Brand+Packaging+Visual" alt="品牌包装视觉作品 02" />
               <div class="work-info">
-                <h3>品牌包装视觉 · 系列形象</h3>
                 <span>Brand Packaging</span>
+                <h3>品牌包装视觉 · 系列形象</h3>
               </div>
             </article>
 
             <div class="work-grid">
               <article class="work-card">
-                <img src="https://via.placeholder.com/1200x1500?text=Work+03" alt="作品 03" />
-                <div class="work-info"><h3>品牌海报视觉 03</h3></div>
+                <img src="https://via.placeholder.com/1200x1500?text=Poster+Visual" alt="品牌海报视觉作品 03" />
+                <div class="work-info"><span>Poster</span><h3>品牌海报视觉 03</h3></div>
               </article>
               <article class="work-card">
-                <img src="https://via.placeholder.com/1200x1500?text=Work+04" alt="作品 04" />
-                <div class="work-info"><h3>电商产品视觉 04</h3></div>
+                <img src="https://via.placeholder.com/1200x1500?text=E-commerce+Visual" alt="电商产品视觉作品 04" />
+                <div class="work-info"><span>E-commerce</span><h3>电商产品视觉 04</h3></div>
               </article>
               <article class="work-card">
-                <img src="https://via.placeholder.com/1200x1500?text=Work+05" alt="作品 05" />
-                <div class="work-info"><h3>品牌 KV 05</h3></div>
+                <img src="https://via.placeholder.com/1200x1500?text=Brand+KV" alt="品牌 KV 作品 05" />
+                <div class="work-info"><span>Key Visual</span><h3>品牌 KV 05</h3></div>
               </article>
               <article class="work-card">
-                <img src="https://via.placeholder.com/1200x1500?text=Work+06" alt="作品 06" />
-                <div class="work-info"><h3>AI 创意图像 06</h3></div>
+                <img src="https://via.placeholder.com/1200x1500?text=AI+Creative+Image" alt="AI 创意图像作品 06" />
+                <div class="work-info"><span>AI Creative</span><h3>AI 创意图像 06</h3></div>
               </article>
             </div>
           </div>
@@ -97,7 +116,10 @@
 
       <section id="services" class="section services">
         <div class="container">
-          <h2>服务内容</h2>
+          <div class="section-head compact">
+            <p class="section-label">SERVICES</p>
+            <h2>服务内容</h2>
+          </div>
           <div class="service-list">
             <div class="service-item"><strong>01</strong><span>商业产品图</span></div>
             <div class="service-item"><strong>02</strong><span>AI 视觉提示词</span></div>
@@ -108,7 +130,8 @@
       </section>
 
       <section id="contact" class="section contact">
-        <div class="container narrow">
+        <div class="container contact-panel">
+          <p class="section-label">CONTACT</p>
           <h2>联系我</h2>
           <p>欢迎品牌合作、商业拍摄与视觉项目咨询。</p>
           <ul>
