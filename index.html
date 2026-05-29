@@ -3,15 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CHUN LEI Studio | AI 商业摄影与品牌视觉</title>
+    <title>CHUN LEI Studio | Visual Design & AI Commercial Photography</title>
     <meta
       name="description"
-      content="CHUN LEI Studio：视觉设计、AI 商业摄影与品牌视觉创作者的个人作品集网站。"
+      content="CHUN LEI Studio 是专注 AI 商业摄影、品牌视觉、产品展示图、包装视觉、海报字体设计与提示词系统的个人视觉作品集官网。"
     />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <header class="site-header">
+    <header class="site-header" data-header>
       <div class="container nav-wrap">
         <a href="#home" class="brand" aria-label="CHUN LEI Studio 首页">
           <span>CHUN LEI</span>
@@ -25,14 +25,17 @@
           aria-expanded="false"
           aria-controls="siteNav"
         >
-          Menu
+          <span></span>
+          <span></span>
+          <span></span>
         </button>
         <nav class="nav" id="siteNav" aria-label="主导航">
-          <a href="#home">首页</a>
-          <a href="#about">关于</a>
-          <a href="#works">作品</a>
-          <a href="#services">服务</a>
-          <a href="#contact">联系</a>
+          <a href="#home">Home</a>
+          <a href="#ethos">Ethos</a>
+          <a href="#focus">Focus</a>
+          <a href="#works">Works</a>
+          <a href="#process">Process</a>
+          <a href="#contact">Contact</a>
         </nav>
       </div>
     </header>
@@ -41,129 +44,199 @@
       <section id="home" class="hero section">
         <div class="container hero-layout">
           <div class="hero-copy">
-            <p class="eyebrow">Visual Direction · AI Commercial Photography</p>
-            <h1>CHUN LEI Studio 为品牌创造克制、清晰且高级的商业视觉。</h1>
-            <p class="hero-desc">
-              从 AI 商业摄影、产品主视觉到品牌包装表达，以黑白灰的秩序、奶油白的温度，建立可被记住的视觉资产。
+            <p class="eyebrow reveal">Visual Design / AI Commercial Photography / Brand Image</p>
+            <h1 class="hero-title" aria-label="CHUN LEI VISUAL DESIGN AI COMMERCIAL PHOTOGRAPHY BRAND IMAGE">
+              <span>CHUN LEI</span>
+              <span>VISUAL DESIGN</span>
+              <span>AI COMMERCIAL</span>
+              <span>PHOTOGRAPHY</span>
+              <span>BRAND IMAGE</span>
+            </h1>
+            <p class="hero-desc reveal">
+              专注 AI 商业摄影、品牌视觉与产品展示图创作，用高级、克制、清晰的视觉语言，让产品被更好地看见。
             </p>
-            <div class="hero-actions">
+            <div class="hero-actions reveal">
               <a href="#works" class="btn btn-dark">查看作品</a>
-              <a href="#contact" class="btn btn-light">预约合作</a>
+              <a href="#contact" class="btn btn-light">联系合作</a>
             </div>
           </div>
-          <div class="hero-panel" aria-label="CHUN LEI Studio 视觉关键词">
-            <span class="panel-index">01</span>
-            <p>Commercial Image System</p>
-            <strong>Quiet luxury visuals for products, brands and campaigns.</strong>
-          </div>
+
+          <aside class="hero-preview reveal" aria-label="作品预览视觉卡片">
+            <div class="preview-image" role="img" aria-label="AI 商业摄影作品占位预览"></div>
+            <div class="preview-meta">
+              <span>Preview / 2026</span>
+              <strong>Quiet visual systems for products, packaging and campaigns.</strong>
+            </div>
+          </aside>
         </div>
       </section>
 
-      <section id="about" class="section about">
+      <section id="ethos" class="section ethos reveal-section">
         <div class="container split-section">
-          <p class="section-kicker">About the studio</p>
-          <div>
-            <h2>以视觉设计师的判断力，结合 AI 商业摄影的效率。</h2>
+          <p class="section-kicker">Our Ethos</p>
+          <div class="ethos-copy">
+            <h2>视觉先于表达。<br />质感决定记忆。</h2>
             <p>
-              你好，我是 CHUN LEI，一名视觉设计 / AI 商业摄影 / 品牌视觉创作者。长期专注商业产品图、品牌包装视觉与提示词设计，擅长将品牌气质转化为清晰、有辨识度、可执行的画面系统。
+              我关注的不只是图片是否好看，而是产品在画面中的气质、叙事、比例、材质和品牌感是否被准确表达。
             </p>
           </div>
         </div>
       </section>
 
-      <section id="works" class="section works">
+      <section id="focus" class="section focus reveal-section">
+        <div class="container">
+          <div class="section-head compact">
+            <p class="section-kicker">Focus</p>
+            <h2>能力方向</h2>
+            <p>从图像生成到品牌输出，将视觉判断、商业目的和可复用提示词系统连接起来。</p>
+          </div>
+          <div class="focus-grid">
+            <article class="focus-card">
+              <span>01</span>
+              <h3>AI Commercial Photography</h3>
+              <p>AI 商业产品摄影</p>
+            </article>
+            <article class="focus-card">
+              <span>02</span>
+              <h3>Prompt Architecture</h3>
+              <p>视觉提示词系统</p>
+            </article>
+            <article class="focus-card">
+              <span>03</span>
+              <h3>Brand Packaging Visual</h3>
+              <p>品牌包装视觉</p>
+            </article>
+            <article class="focus-card">
+              <span>04</span>
+              <h3>Editorial Poster Design</h3>
+              <p>海报 / 字体 / 插画视觉</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="works" class="section works reveal-section">
         <div class="container">
           <div class="section-head">
-            <p class="section-kicker">Selected work</p>
+            <p class="section-kicker">Selected Works</p>
             <h2>作品展示</h2>
-            <p>
-              以案例页的方式呈现项目气质：画面、策略、材质与品牌记忆点共同构成高级商业影像。
-            </p>
+            <p>以编号卡片组织不同项目方向，在留白、比例和材质里建立清晰的商业视觉节奏。</p>
           </div>
           <div class="work-grid">
-            <article class="work-card featured">
-              <div class="work-visual visual-cream">
-                <span>01</span>
+            <article class="work-card">
+              <div class="work-image" style="--image: url('images/work-01.jpg')">
+                <span>01 / 06</span>
               </div>
               <div class="work-info">
                 <p>AI Commercial Photography</p>
-                <h3>高端护肤产品视觉</h3>
-                <span>质感布光 / 奶油白场景 / 电商主图</span>
+                <h3>AI商业摄影</h3>
+                <span>围绕机场、飞机、酒店、海边四个旅行节点，搭建统一的夏日产品视觉系列。</span>
               </div>
             </article>
             <article class="work-card">
-              <div class="work-visual visual-black">
-                <span>02</span>
+              <div class="work-image" style="--image: url('images/work-02.jpg')">
+                <span>02 / 06</span>
               </div>
               <div class="work-info">
-                <p>Brand Key Visual</p>
-                <h3>黑白品牌主视觉</h3>
-                <span>极简构图 / 品牌调性 / Campaign KV</span>
+                <p>Brand Packaging Visual</p>
+                <h3>视觉活动设计</h3>
+                <span>围绕绿色系包装、礼盒、瓶标和手提袋，建立产品包装视觉系统。</span>
               </div>
             </article>
             <article class="work-card">
-              <div class="work-visual visual-gray">
-                <span>03</span>
-              </div>
-              <div class="work-info">
-                <p>Packaging Direction</p>
-                <h3>精品包装视觉系统</h3>
-                <span>包装延展 / 材质氛围 / 货架识别</span>
-              </div>
-            </article>
-            <article class="work-card">
-              <div class="work-visual visual-line">
-                <span>04</span>
+              <div class="work-image" style="--image: url('images/work-03.jpg')">
+                <span>03 / 06</span>
               </div>
               <div class="work-info">
                 <p>Poster Design</p>
-                <h3>商业海报与社媒物料</h3>
-                <span>版式层级 / 留白节奏 / 发布模板</span>
+                <h3>电商海报</h3>
+                <span>结合民国、中式恐怖、纸嫁娘、鬼火与角色设定，完成系列人物海报视觉。</span>
+              </div>
+            </article>
+            <article class="work-card">
+              <div class="work-image" style="--image: url('images/work-04.jpg')">
+                <span>04 / 06</span>
+              </div>
+              <div class="work-info">
+                <p>Typography Design</p>
+                <h3>品牌设计</h3>
+                <span>为品牌、海报与主题项目设计具有风格记忆点的标题字和字体视觉。</span>
+              </div>
+            </article>
+            <article class="work-card">
+              <div class="work-image" style="--image: url('images/work-05.jpg')">
+                <span>05 / 06</span>
+              </div>
+              <div class="work-info">
+                <p>Product Retouching</p>
+                <h3>直播运营板块</h3>
+                <span>完成产品抠图、白底图、材质修正和多产品组合精修展示。</span>
+              </div>
+            </article>
+            <article class="work-card">
+              <div class="work-image" style="--image: url('images/work-06.jpg')">
+                <span>06 / 06</span>
+              </div>
+              <div class="work-info">
+                <p>Prompt System</p>
+                <h3>AI 视觉提示词系统</h3>
+                <span>将参考图拆解为构图、光线、镜头、色彩、材质和提示词系统，帮助项目稳定复用。</span>
               </div>
             </article>
           </div>
         </div>
       </section>
 
-      <section id="services" class="section services">
+      <section id="process" class="section process reveal-section">
         <div class="container split-section">
-          <p class="section-kicker">Services</p>
+          <p class="section-kicker">How I Work</p>
           <div>
-            <h2>轻量但完整的视觉服务，适合品牌快速升级第一版质感。</h2>
-            <div class="service-list">
-              <div class="service-item">
+            <h2>从参考拆解到成片优化，建立可复用的视觉系统。</h2>
+            <div class="process-list">
+              <article class="process-item">
                 <span>01</span>
-                <strong>商业产品图</strong>
-                <p>用于电商、社媒与广告投放的高质感产品影像。</p>
-              </div>
-              <div class="service-item">
+                <div>
+                  <h3>视觉拆解</h3>
+                  <p>分析参考图的构图、镜头、光线、色彩、材质和展示逻辑。</p>
+                </div>
+              </article>
+              <article class="process-item">
                 <span>02</span>
-                <strong>AI 视觉提示词</strong>
-                <p>建立可复用的画面风格、灯光、材质与构图语言。</p>
-              </div>
-              <div class="service-item">
+                <div>
+                  <h3>风格转译</h3>
+                  <p>把参考逻辑转成适合品牌和产品的视觉方向。</p>
+                </div>
+              </article>
+              <article class="process-item">
                 <span>03</span>
-                <strong>品牌包装视觉</strong>
-                <p>围绕产品定位输出包装方向、视觉氛围与延展规范。</p>
-              </div>
-              <div class="service-item">
+                <div>
+                  <h3>提示词搭建</h3>
+                  <p>建立可复用的 Image 2 / GPT Image 生成提示词系统。</p>
+                </div>
+              </article>
+              <article class="process-item">
                 <span>04</span>
-                <strong>海报设计</strong>
-                <p>为新品发布、活动传播与内容运营设计关键物料。</p>
-              </div>
+                <div>
+                  <h3>成片优化</h3>
+                  <p>围绕比例、材质、真实感、商业感进行二次调整。</p>
+                </div>
+              </article>
             </div>
           </div>
         </div>
       </section>
 
-      <section id="contact" class="section contact">
+      <section id="contact" class="section contact reveal-section">
         <div class="container contact-card">
           <p class="section-kicker">Contact</p>
-          <h2>如果你的品牌需要更高级的第一眼，我们可以从一组核心画面开始。</h2>
+          <h2>Let’s build your next visual system.</h2>
+          <p>
+            如果你需要 AI 商业摄影、品牌包装视觉、产品展示图或提示词系统，欢迎联系我一起完成下一个视觉项目。
+          </p>
           <ul>
-            <li>邮箱：yourname@email.com</li>
-            <li>微信：your_wechat_id</li>
-            <li>小红书 / Instagram：@your_handle</li>
+            <li>Email: <a href="mailto:your-email@example.com">your-email@example.com</a></li>
+            <li>WeChat: your-wechat</li>
+            <li>Social: Xiaohongshu / Instagram</li>
           </ul>
         </div>
       </section>
