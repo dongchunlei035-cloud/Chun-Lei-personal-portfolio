@@ -60,6 +60,7 @@ function build() {
   mkdirSync(join(dist, 'node_modules/react-dom'), { recursive: true });
   const html = readFileSync(join(root, 'index.html'), 'utf8').replace('src="/src/main.jsx"', `src="${assetPath(base, 'src/main.jsx')}"`);
   writeFileSync(join(dist, 'index.html'), html);
+  writeFileSync(join(dist, '.nojekyll'), '');
   writeFileSync(join(dist, 'src/main.jsx'), transformJs(readFileSync(join(root, 'src/main.jsx'), 'utf8'), base));
   cpSync(join(root, 'src/styles.css'), join(dist, 'src/styles.css'));
   cpSync(join(root, 'node_modules/react/index.js'), join(dist, 'node_modules/react/index.js'));
