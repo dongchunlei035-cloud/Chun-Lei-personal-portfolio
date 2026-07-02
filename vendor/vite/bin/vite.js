@@ -20,12 +20,19 @@ function withSlash(path) {
 function assetPath(base, path) {
   return `${withSlash(base)}${path.replace(/^\/+/, '')}`;
 }
-function transformJs(code, base = '/') {
+function transformDevJs(code, base = '/') {
   return code
     .replace(/import React from ['"]react['"];?/g, `import React from '${assetPath(base, 'node_modules/react/index.js')}';`)
     .replace(/import \{ Fragment \} from ['"]react['"];?/g, `import { Fragment } from '${assetPath(base, 'node_modules/react/index.js')}';`)
     .replace(/import \{ createRoot \} from ['"]react-dom\/client['"];?/g, `import { createRoot } from '${assetPath(base, 'node_modules/react-dom/client.js')}';`)
     .replace(/import ['"]\.\/styles\.css['"];?/g, `const __style = document.createElement('link'); __style.rel = 'stylesheet'; __style.href = '${assetPath(base, 'src/styles.css')}'; document.head.appendChild(__style);`);
+}
+function bundleApp() {
+  const app = readFileSync(join(root, 'src/main.jsx'), 'utf8')
+    .replace(/import React from ['"]react['"];?\n?/, '')
+    .replace(/import \{ createRoot \} from ['"]react-dom\/client['"];?\n?/, '')
+    .replace(/import ['"]\.\/styles\.css['"];?\n?/, '');
+  return `const React = {\n  Fragment: Symbol.for('react.fragment'),\n  createElement(type, props, ...children) {\n    return { type, props: props || {}, children: children.flat(Infinity) };\n  },\n};\nfunction setProp(node, key, value) {\n  if (key === 'className') node.setAttribute('class', value);\n  else if (key === 'htmlFor') node.setAttribute('for', value);\n  else if (key.startsWith('on') && typeof value === 'function') node.addEventListener(key.slice(2).toLowerCase(), value);\n  else if (key !== 'children' && key !== 'key' && value !== false && value != null) node.setAttribute(key, value === true ? '' : value);\n}\nfunction renderNode(vnode) {\n  if (vnode == null || vnode === false) return document.createTextNode('');\n  if (typeof vnode === 'string' || typeof vnode === 'number') return document.createTextNode(String(vnode));\n  if (Array.isArray(vnode)) {\n    const fragment = document.createDocumentFragment();\n    vnode.forEach((child) => fragment.appendChild(renderNode(child)));\n    return fragment;\n  }\n  if (typeof vnode.type === 'function') return renderNode(vnode.type({ ...vnode.props, children: vnode.children }));\n  if (vnode.type === React.Fragment) return renderNode(vnode.children);\n  const node = document.createElement(vnode.type);\n  Object.entries(vnode.props || {}).forEach(([key, value]) => setProp(node, key, value));\n  (vnode.children || []).forEach((child) => node.appendChild(renderNode(child)));\n  return node;\n}\nfunction createRoot(container) {\n  return { render(vnode) { container.replaceChildren(renderNode(vnode)); } };\n}\n${app}`;
 }
 function safePath(urlPath, baseDir = root, publicBase = '/') {
   let requestPath = decodeURIComponent(urlPath.split('?')[0]);
@@ -46,7 +53,7 @@ function serve(baseDir, port = 5173, publicBase = '/') {
     if (statSync(file).isDirectory()) file = join(file, 'index.html');
     let body = readFileSync(file);
     const ext = extname(file);
-    if (ext === '.js' || ext === '.jsx') body = transformJs(body.toString(), publicBase);
+    if (ext === '.js' || ext === '.jsx') body = transformDevJs(body.toString(), publicBase);
     send(res, 200, body, mime[ext] || 'application/octet-stream');
   });
   server.listen(port, '0.0.0.0', () => console.log(`  Local:   http://localhost:${port}${withSlash(publicBase)}`));
@@ -55,16 +62,13 @@ function build() {
   const base = readBase();
   const dist = join(root, 'dist');
   rmSync(dist, { recursive: true, force: true });
-  mkdirSync(join(dist, 'src'), { recursive: true });
-  mkdirSync(join(dist, 'node_modules/react'), { recursive: true });
-  mkdirSync(join(dist, 'node_modules/react-dom'), { recursive: true });
-  const html = readFileSync(join(root, 'index.html'), 'utf8').replace('src="/src/main.jsx"', `src="${assetPath(base, 'src/main.jsx')}"`);
+  mkdirSync(join(dist, 'assets'), { recursive: true });
+  const html = readFileSync(join(root, 'index.html'), 'utf8')
+    .replace('<script type="module" src="/src/main.jsx"></script>', `<link rel="stylesheet" href="${assetPath(base, 'assets/styles.css')}" />\n    <script type="module" src="${assetPath(base, 'assets/main.js')}"></script>`);
   writeFileSync(join(dist, 'index.html'), html);
   writeFileSync(join(dist, '.nojekyll'), '');
-  writeFileSync(join(dist, 'src/main.jsx'), transformJs(readFileSync(join(root, 'src/main.jsx'), 'utf8'), base));
-  cpSync(join(root, 'src/styles.css'), join(dist, 'src/styles.css'));
-  cpSync(join(root, 'node_modules/react/index.js'), join(dist, 'node_modules/react/index.js'));
-  cpSync(join(root, 'node_modules/react-dom/client.js'), join(dist, 'node_modules/react-dom/client.js'));
+  writeFileSync(join(dist, 'assets/main.js'), bundleApp());
+  cpSync(join(root, 'src/styles.css'), join(dist, 'assets/styles.css'));
   console.log('vite v0.0.0-local building for production...');
   console.log(`base: ${base}`);
   console.log('✓ built in dist');
